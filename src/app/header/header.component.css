@@ -1,0 +1,36 @@
+header{
+  background: white;
+  padding: 0;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 20px;
+
+}
+
+.container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stack{
+  display: flex;
+  justify-content: center;
+}
+
+.img1{
+  cursor: pointer;
+}
+.b1{
+  border: none;
+  height: 50px;
+  background-color:white;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+  width: 100px;
+  border-radius: 15px;
+}
+
+.b1:hover{
+  border: 1px solid #888;
+  background-color: #ddd;
+}

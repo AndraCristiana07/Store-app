@@ -1,0 +1,17 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let product of products">
+    <mat-card class="card">
+      <mat-card-title>{{ product.title }}</mat-card-title>
+      <mat-card-content>
+        <p>Price: {{ product.price | currency:'EUR':'symbol':'1.2-2' }}</p>
+        <div>
+
+          <button class="b1" (click)="addToCart(product)">Add to cart</button>
+          <button class="b2" (mouseenter)="onButtonHover('heart', product.id)" (mouseleave)="onButtonOut('heart', product.id)" (click)="onButtonClick('heart', product.id)">
+            <img class="img1" [src]="getHeartImage(product.id)"/>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

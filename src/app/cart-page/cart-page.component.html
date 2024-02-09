@@ -1,0 +1,43 @@
+<div>
+  <app-header></app-header>
+  <div>
+
+  <button class="b1" routerLink="/delivery">
+    <img src="assets/shipping.svg"/>
+    Choose delivery
+    <img class="img1" src="assets/arrow_forward.svg"/>
+  </button>
+  </div>
+
+  <div class="cart">
+    <h2>Review Cart</h2>
+    <button class="b2">Empty Cart</button>
+    <button class="b2">Print</button>
+<!--    <p>CART IS EMPTY</p>-->
+<!--    <p>You need to add items in your cart</p>-->
+  <div>
+    <app-prduct-cart [cart]="cart"></app-prduct-cart>
+  </div>
+
+    <div class="summary">
+      <div class="row">
+        <p>Cart Summery</p>
+        <p>3 items</p>
+      </div>
+      <div class="row">
+        <p>Cart total</p>
+        <p>€3</p>
+      </div>
+      <div class="row">
+        <p>Service Fee</p>
+        <p>€2</p>
+      </div>
+      <div class="row">
+        <p>Total (estimative) </p>
+        <p>€5</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+

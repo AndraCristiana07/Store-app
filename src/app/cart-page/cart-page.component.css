@@ -1,0 +1,55 @@
+.cart{
+  padding: 20px;
+
+  text-align: center;
+  background: darkgray;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+.summary{
+  padding: 20px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: #dddddd;
+  margin-top: 50px;
+}
+h2{
+  margin-bottom: 20px;
+}
+
+p{
+  margin-bottom: 10px;
+}
+
+.img1{
+  display: flex;
+  justify-self: flex-end;
+}
+.b1{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+}
+
+.b2 {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-color: black;
+  border-width: thin ;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  margin: 5px;
+}
+
+.b2:hover {
+  background-color: #8B89E6;
+
+}

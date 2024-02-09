@@ -1,0 +1,13 @@
+<div *ngFor="let item of cart.items" class="card">
+  <div class="row">
+    <img/>
+    <p>{{ item.products.title }}</p>
+    <p>{{ item.products.price | currency:'EUR':'symbol':'1.2-2'  }}</p>
+  </div>
+  <div class="end">
+    <button>-</button>
+    <p>Nr</p>
+    <button>+</button>
+
+  </div>
+</div>

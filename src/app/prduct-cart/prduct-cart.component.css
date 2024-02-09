@@ -1,0 +1,13 @@
+.card{
+  background: #888888;
+
+
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+.end{
+  display: flex;
+  justify-content: flex-end;
+}
