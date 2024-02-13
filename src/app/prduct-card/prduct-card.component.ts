@@ -4,6 +4,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MockDataService} from "../mock-data.service";
 import { CartService } from "../cart.service";
+import {CartItem} from "../models/CartItem";
 
 
 @Component({
@@ -51,5 +52,10 @@ export class PrductCardComponent implements OnInit{
   }
   addToCart(product: any): void {
     this.cartService.addToCart(product);
+  }
+
+  removeFromCart(cartItem:CartItem): void {
+    this.cartService.removeFromCart(cartItem.products.id);
+    // this.setCart();
   }
 }

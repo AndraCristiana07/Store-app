@@ -3,11 +3,18 @@
     <img/>
     <p>{{ item.products.title }}</p>
     <p>{{ item.products.price | currency:'EUR':'symbol':'1.2-2'  }}</p>
+    <div>
+      <button class="del" (click)="removeItem(item.products.id)">
+        <img src="assets/delete.svg">
+      </button>
+    </div>
   </div>
   <div class="end">
-    <button>-</button>
-    <p>Nr</p>
-    <button>+</button>
+    <button (click)="changeQuantity(item.products.id, -1)">-</button>
+    <p>{{ item.quantity }}</p>
+    <button (click)="changeQuantity(item.products.id, 1)">+</button>
 
   </div>
+
+
 </div>

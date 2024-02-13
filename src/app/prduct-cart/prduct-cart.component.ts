@@ -13,11 +13,24 @@ export class PrductCartComponent {
   // public cartItems: any[];
   // @Input() cartItems: any[] = [];
 
-  // constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) {}
 
   // ngOnInit(): void {
   //   this.cartItems = this.cartService.getCartItems();
   // }
   @Input() cart!: Cart;
+
+  changeQuantity(productID: number, delta: number){
+    this.cartService.changeQuantity(productID,delta);
+  }
+
+  removeFromCart(productID:number): void {
+    this.cartService.removeFromCart(productID);
+  }
+  removeItem(productId: number): void {
+    return this.cartService.removeItem(productId);
+  }
+
+
 
 }

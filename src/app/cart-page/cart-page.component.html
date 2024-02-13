@@ -1,40 +1,50 @@
 <div>
   <app-header></app-header>
-  <div>
+  <div *ngIf="getNumberOfItems() > 0">
 
-  <button class="b1" routerLink="/delivery">
-    <img src="assets/shipping.svg"/>
-    Choose delivery
-    <img class="img1" src="assets/arrow_forward.svg"/>
-  </button>
+    <button class="b1" routerLink="/delivery">
+      <img src="assets/shipping.svg"/>
+      Choose delivery
+      <img class="img1" src="assets/arrow_forward.svg"/>
+    </button>
   </div>
 
   <div class="cart">
     <h2>Review Cart</h2>
-    <button class="b2">Empty Cart</button>
-    <button class="b2">Print</button>
-<!--    <p>CART IS EMPTY</p>-->
-<!--    <p>You need to add items in your cart</p>-->
-  <div>
+    <div *ngIf="getNumberOfItems() === 0">
+      <p>CART IS EMPTY</p>
+      <p>You need to add items in your cart</p>
+    </div>
+    <div *ngIf="getNumberOfItems() > 0">
+      <button (click)="emptyCart()" class="b2">Empty Cart</button>
+      <button class="b2">Print</button>
+    </div>
+
+
+  <div >
     <app-prduct-cart [cart]="cart"></app-prduct-cart>
   </div>
 
-    <div class="summary">
+    <div *ngIf="getNumberOfItems() > 0" class="summary">
       <div class="row">
         <p>Cart Summery</p>
-        <p>3 items</p>
+        <p>{{getNumberOfItems()}}</p>
       </div>
       <div class="row">
         <p>Cart total</p>
-        <p>€3</p>
+        <p>{{getCartTotalPrice() | currency:'EUR':'symbol':'1.2-2'}}</p>
       </div>
       <div class="row">
         <p>Service Fee</p>
         <p>€2</p>
       </div>
       <div class="row">
+        <p>Delivery Fee</p>
+        <p>{{getDeliveryFee()  | currency:'EUR':'symbol':'1.2-2'}}</p>
+      </div>
+      <div class="row">
         <p>Total (estimative) </p>
-        <p>€5</p>
+        <p>{{getTotalPrice() | currency:'EUR':'symbol':'1.2-2'}}</p>
       </div>
     </div>
   </div>

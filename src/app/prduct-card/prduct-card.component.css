@@ -34,3 +34,9 @@
 .img1:hover{
 
 }
+
+.del{
+  border: none;
+  cursor: pointer;
+
+}
