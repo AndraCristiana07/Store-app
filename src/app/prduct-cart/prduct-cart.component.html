@@ -3,8 +3,11 @@
     <img/>
     <p>{{ item.products.title }}</p>
     <p>{{ item.products.price | currency:'EUR':'symbol':'1.2-2'  }}</p>
+    <p>Total: {{ item.products.price * item.quantity | currency:'EUR':'symbol':'1.2-2' }}</p>
     <div>
-      <button class="del" (click)="removeItem(item.products.id)">
+      <button class="del"
+              (click)="openDialog(item)"
+      >
         <img src="assets/delete.svg">
       </button>
     </div>

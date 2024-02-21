@@ -16,7 +16,7 @@
       <p>You need to add items in your cart</p>
     </div>
     <div *ngIf="getNumberOfItems() > 0">
-      <button (click)="emptyCart()" class="b2">Empty Cart</button>
+      <button (click)="openDialog()" class="b2">Empty Cart</button>
       <button class="b2">Print</button>
     </div>
 

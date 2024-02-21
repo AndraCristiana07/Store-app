@@ -11,13 +11,13 @@ export class CartService {
   constructor() {}
 
  addToCart(products: Products): void {
-    let cartItem = this.cart.items.find(item => item.products.id === products.id);
-    if (cartItem) {
-      this.changeQuantity(products.id, cartItem.quantity + 1);
-      return;
-    }
-    this.cart.items.push(new CartItem(products));
-
+   let cartItem = this.cart.items.find(item => item.products.id === products.id);
+   if (cartItem) {
+     this.changeQuantity(products.id, 1);
+   } else {
+     products.addedToCart = true;
+     this.cart.items.push(new CartItem(products));
+   }
  }
 
  removeFromCart(productID: number): void {
@@ -82,4 +82,8 @@ export class CartService {
     this.cart.items = [];
   }
 
+  getQuantity(productId: number): number {
+    const cartItem = this.cart.items.find(item => item.products.id === productId);
+    return cartItem ? cartItem.quantity : 0;
+  }
 }

@@ -12,4 +12,7 @@ export class CartItem{
     return this.products.price;
 
   }
+  getQuantity(): number {
+    return this.quantity;
+  }
 }

@@ -8,6 +8,8 @@ import {CartItem} from '../models/CartItem';
 import {CurrencyPipe} from "@angular/common";
 import {CommonModule} from "@angular/common";
 import {EmptyCartDialogComponent} from "../empty-cart-dialog/empty-cart-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
+import {CartDialogComponent} from "../cart-dialog/cart-dialog.component";
 @Component({
   selector: 'app-cart-page',
   // standalone: true,
@@ -27,7 +29,7 @@ export class CartPageComponent implements OnInit{
   // cartItems: any[] = [];
   cart!:Cart;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, public dialog: MatDialog) {
     this.setCart();
   }
 
@@ -38,6 +40,18 @@ export class CartPageComponent implements OnInit{
   ngOnInit(): void {
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CartDialogComponent, {
+      // data: { item: item }
+      // data: {name: this.name, animal: this.animal},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+      // this.removeItem(item.products.id);
+    });
+  }
   removeFromCart(cartItem:CartItem): void {
     this.cartService.removeFromCart(cartItem.products.id);
     this.setCart();

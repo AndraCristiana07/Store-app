@@ -6,7 +6,7 @@ export class Products{
   filename!:string;
   price!:number;
   rating!:number;
-
-
+  addedToCart: boolean = false;
+  favorite: boolean = false;
 
 }
