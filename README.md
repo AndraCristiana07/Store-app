@@ -69,24 +69,17 @@ To be able to use this project you will need some stuff first.
 
 ### Prerequisites
 
-* node.js and npm
-  ```sh
-  sudo apt-get install nodejs npm
-  ```
-* express and nodemon
-     ```sh
-    npm install express cors
-    npm install nodemon ts-node --save-dev
-    ```
+* You need to install npm and node.js
 
 
 ### Installation
 
 If you want to make your own app like this you need to:
 
-1. Clone the repo
+1. Clone the repos
    ```sh
    git clone https://github.com/AndraCristiana07/Store-app.git
+   git clone https://github.com/AndraCristiana07/Store-app-backend.git
    ```
 2. Install dependencies
    ```sh
