@@ -1,27 +1,134 @@
-# StoreApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 
-## Development server
+  <h3 align="center">Store app </h3>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+  <p align="center">
+    Order right now!
+    <br />
+   
+  </p>
+</div>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+         <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#acknowledgments">Acknoledgments</a></li>
+    
+    
+  </ol>
+</details>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-## Running end-to-end tests
+A store application where you can buy stuff you need. 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+You have a home page with all the products cards. You can add to cart (or change the quantity of how many you want in the cart) or add the product to favorites.
+There's a favorites page, where you can see all the products you liked or you can erase some if you don't like them anymore.
+There's a Login and SignUp Page, a Profile page and a cart page.
+In the cart page you can see all the products you want to buy and the summary of your total (total, price for delivery, fees). The price for delivery depends on how much you are spending. Uou can also modify the quantity of your products here, delete specific items or delete your entire cart.
 
-## Further help
+### Built With
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+These are what I used to build the bot:
+
+* ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+ 
+*  ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+    
+*  ![CSS3](https://img.shields.io/badge/CSS%20-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+*  ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To be able to use this project you will need some stuff first.
+
+### Prerequisites
+
+* node.js and npm
+  ```sh
+  sudo apt-get install nodejs npm
+  ```
+* express and nodemon
+     ```sh
+    npm install express cors
+    npm install nodemon ts-node --save-dev
+    ```
+
+
+### Installation
+
+If you want to make your own app like this you need to:
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/AndraCristiana07/Store-app.git
+   ```
+2. Install dependencies
+   ```sh
+   npm install
+   ```
+3. Run the frontend
+   ```sh
+   npm run start
+   ```
+4. Run the backend
+    ```sh
+   npm  start
+   ```
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Make home page
+- [x] Make some mock data for testing
+- [x] Make cart page
+- [x] Make Log In/ Sign In pages
+- [x] Make favorites page
+- [x] Use navigation
+- [x] Make products cards
+- [x] Implement functionalities to "add to cart" and add to favorites
+- [x] Make cart summary
+- [x] Make pages for all "types" of products
+- [x] Make "add to cart" transform into change quantity after it's added to cart and go back when the item reaches 0 quantity again
+- [x] Make search bar
+- [ ] Implement search
+- [ ] Implement Login/ SignUp
+- [ ] store data in a database 
+
+
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+Some things that helped me while making this project :
+* [Angular doc](https://angular.io/)
+* [Angular material](https://material.angular.io/)
+
