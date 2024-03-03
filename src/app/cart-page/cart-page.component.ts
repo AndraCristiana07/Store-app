@@ -12,7 +12,6 @@ import {MatDialog} from "@angular/material/dialog";
 import {CartDialogComponent} from "../cart-dialog/cart-dialog.component";
 @Component({
   selector: 'app-cart-page',
-  // standalone: true,
   imports: [
     HeaderComponent,
     RouterLink,

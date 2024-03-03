@@ -8,9 +8,12 @@
   text-align: center;
 
 }
-
+.row{
+  display: flex;
+  justify-content: center;
+}
 .l1{
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .l2{

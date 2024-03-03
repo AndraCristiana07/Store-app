@@ -38,9 +38,9 @@ export class CartService {
     if (cartItem.quantity < 0) {
       cartItem.quantity = 0;
     }
-    if(cartItem.quantity == 0){
-      this.removeItem(productID)
-    }
+    // if(cartItem.quantity == 0){
+    //   this.removeItem(productID)
+    // }
   }
  }
 

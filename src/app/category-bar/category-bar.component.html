@@ -1,5 +1,19 @@
+<!--<section class="bar">-->
+<!--  <div class="row">-->
+<!--    <button>shop all</button>-->
+<!--    <div class="container" *ngFor="let product of products">-->
+<!--      <button> [routerLink]="['/type', type.name]" {{product.type}}</button>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</section>-->
+
 <section class="bar">
-  <div class="container">
-    <p>shop all</p>
+  <div class="row">
+    <button class="b" routerLink="/">shop all</button>
+    <div class="container" *ngFor="let type of types">
+      <button class="b" routerLink="/type/{{ type.name }}">{{ type.name }} </button>
+    </div>
   </div>
+
 </section>

@@ -1,18 +1,22 @@
-<!--<app-header></app-header>-->
+<app-header xmlns="http://www.w3.org/1999/html"></app-header>
 <div class="container">
   <h2 class="title">Sign Up</h2>
   <form >
     <div>
-      <label class="l1" for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
+      <label class="l2" for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
     </div>
     <div>
       <label class="l2" for="email">Email:</label>
       <input type="email" id="email" name="email" required>
     </div>
-    <div>
-      <label class="l3" for="password">Password:</label>
-      <input type="password" id="password" name="password"  required>
+    <div class="row">
+      <label class="l1" for="password">Password:</label>
+      <input [type]="password" id="password" name="password"  required>
+        <img (click)="onClick()" src="assets/eye.svg">
+        <i class="" aria-hidden="true" *ngIf="!show"></i>
+        <i class="" aria-hidden="true" *ngIf="show"></i>
+
     </div>
     <button type="submit">Sign Up</button>
   </form>

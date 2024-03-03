@@ -12,12 +12,15 @@
       </button>
     </div>
   </div>
-  <div class="end">
-    <button (click)="changeQuantity(item.products.id, -1)">-</button>
+  <div class="end" >
+    <button (click)="item.quantity === 1 ? openDialog(item) : changeQuantity(item.products.id, -1)">-</button>
+
     <p>{{ item.quantity }}</p>
     <button (click)="changeQuantity(item.products.id, 1)">+</button>
 
   </div>
-
+<!--  <div class="end" *ngIf="item.quantity === 0"-->
+<!--    (click)="openDialog(item)">-->
+<!--  </div>-->
 
 </div>

@@ -1,0 +1,46 @@
+.card{
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.b1{
+  border: none;
+  height: 50px;
+  background-color:white;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+  width: 100px;
+  border-radius: 15px;
+}
+
+.b1:hover{
+  border: 1px solid #888;
+  background-color: #ddd;
+}
+
+.b2{
+  border: none;
+  height: 50px;
+  background-color:white;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+  width: 50px;
+  border-radius: 15px;
+}
+
+.img1:hover{
+
+}
+
+.del{
+  border: none;
+  cursor: pointer;
+
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+}

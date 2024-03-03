@@ -28,6 +28,7 @@ export class PrductCartComponent {
   }
 
   openDialog(item : CartItem): void {
+    const originalQuantity = item.quantity;
     const dialogRef = this.dialog.open(EmptyCartDialogComponent, {
       data: { item: item }
       // data: {name: this.name, animal: this.animal},

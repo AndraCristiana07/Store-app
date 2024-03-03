@@ -7,7 +7,11 @@ import {LoginComponent} from "../login/login.component";
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, LoginComponent, SvgIconComponent, SearchComponent, RouterModule],
+  imports: [
+    CommonModule,
+    SvgIconComponent,
+    SearchComponent,
+    RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })

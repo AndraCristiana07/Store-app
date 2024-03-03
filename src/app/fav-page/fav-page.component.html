@@ -10,14 +10,15 @@
         <mat-card-content>
           <p>Price: {{ product.price | currency:'EUR':'symbol':'1.2-2' }}</p>
           <div class="row">
-            <div  *ngIf="!product.addedToCart">
+            <div *ngIf="getQuantity(product.id) === 0">
               <button class="b1" (click)="addToCart(product)">Add to cart</button>
             </div>
-            <div *ngIf="product.addedToCart">
+            <!--          <div *ngIf="product.addedToCart ">-->
+            <div *ngIf="getQuantity(product.id) > 0">
               <div class="row">
                 <button (click)="changeQuantity(product.id, -1)">-</button>
                 <p>{{ getQuantity(product.id) }}</p>
-                <button      (click)="changeQuantity(product.id, 1)">+</button>
+                <button (click)="changeQuantity(product.id, 1)">+</button>
               </div>
             </div>
             <button class="b2"
