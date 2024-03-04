@@ -1,27 +1,25 @@
-.card{
+.card {
   background: #888888;
   padding: 10px;
   margin: 5px;
-
-
 }
-.row{
+.row {
   display: flex;
   justify-content: space-between;
 }
-.end{
+.end {
   display: flex;
   justify-content: flex-end;
 }
 
-.del{
+.del {
   border: none;
-  background-color:white;
+  background-color: white;
   transition: all ease-in-out 0.2s;
   cursor: pointer;
 }
 
-.del:hover{
+.del:hover {
   border: 1px solid #888;
   background-color: red;
 }

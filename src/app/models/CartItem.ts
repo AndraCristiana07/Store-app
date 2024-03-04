@@ -1,16 +1,15 @@
-import {Products} from "./Products";
+import { Products } from './Products';
 
-export class CartItem{
-  constructor(products:Products) {
+export class CartItem {
+  constructor(products: Products) {
     this.products = products;
     // this.price;
   }
-  products: Products
+  products: Products;
   quantity: number = 1;
 
-  get price(): number{
+  get price(): number {
     return this.products.price;
-
   }
   getQuantity(): number {
     return this.quantity;

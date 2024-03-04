@@ -1,29 +1,31 @@
 <h2 mat-dialog-title>Change Password?</h2>
-<mat-dialog-content >
+<mat-dialog-content>
   <p>Input your old password and the new one bellow</p>
   <div class="row">
     <label class="l1" for="oldpassword">Old Password:</label>
-    <input [type]="oldpassword" id="oldpassword" name="password"  required>
-    <img (click)="onClick()" src="assets/eye.svg">
+    <input [type]="oldpassword" id="oldpassword" name="password" required />
+    <img (click)="onClick()" src="assets/eye.svg" />
     <i class="" aria-hidden="true" *ngIf="!show1"></i>
     <i class="" aria-hidden="true" *ngIf="show1"></i>
   </div>
   <div class="row">
     <label class="l1" for="newpassword">New Password:</label>
-    <input [type]="newpassword" id="newpassword" name="password"  required>
-    <img (click)="onClick()" src="assets/eye.svg">
+    <input [type]="newpassword" id="newpassword" name="password" required />
+    <img (click)="onClick()" src="assets/eye.svg" />
     <i class="" aria-hidden="true" *ngIf="!show2"></i>
     <i class="" aria-hidden="true" *ngIf="show2"></i>
   </div>
   <div class="row">
     <label class="l1" for="renewpassword">Renter New Password:</label>
-    <input [type]="newpassword" id="renewpassword" name="password"  required>
-    <img (click)="onClick()" src="assets/eye.svg">
+    <input [type]="newpassword" id="renewpassword" name="password" required />
+    <img (click)="onClick()" src="assets/eye.svg" />
     <i class="" aria-hidden="true" *ngIf="!show2"></i>
     <i class="" aria-hidden="true" *ngIf="show2"></i>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="cancelPass()">Cancel</button>
-  <button mat-button color="warn" (click)="confirmPass()">Change Password</button>
+  <button mat-button color="warn" (click)="confirmPass()">
+    Change Password
+  </button>
 </mat-dialog-actions>

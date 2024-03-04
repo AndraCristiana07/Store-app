@@ -3,7 +3,7 @@
 // export const mock_products: Products[] = [
 
 // {
-//     id: 1,	
+//     id: 1,
 //     title: "Brown eggs",
 //     type: "dairy",
 //     description: "Raw organic brown eggs in a basket",

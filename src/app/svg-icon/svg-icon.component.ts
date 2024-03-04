@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './svg-icon.component.html',
-  styleUrl: './svg-icon.component.css'
+  styleUrl: './svg-icon.component.css',
 })
-export class SvgIconComponent {
-
-}
+export class SvgIconComponent {}

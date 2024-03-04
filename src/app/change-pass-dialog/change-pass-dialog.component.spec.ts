@@ -8,10 +8,9 @@ describe('ChangePassDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ChangePassDialogComponent]
-    })
-    .compileComponents();
-    
+      imports: [ChangePassDialogComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ChangePassDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

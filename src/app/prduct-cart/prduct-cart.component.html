@@ -1,26 +1,36 @@
 <div *ngFor="let item of cart.items" class="card">
   <div class="row">
-    <img/>
+    <img />
     <p>{{ item.products.title }}</p>
-    <p>{{ item.products.price | currency:'EUR':'symbol':'1.2-2'  }}</p>
-    <p>Total: {{ item.products.price * item.quantity | currency:'EUR':'symbol':'1.2-2' }}</p>
+    <p>{{ item.products.price | currency: "EUR" : "symbol" : "1.2-2" }}</p>
+    <p>
+      Total:
+      {{
+        item.products.price * item.quantity
+          | currency: "EUR" : "symbol" : "1.2-2"
+      }}
+    </p>
     <div>
-      <button class="del"
-              (click)="openDialog(item)"
-      >
-        <img src="assets/delete.svg">
+      <button class="del" (click)="openDialog(item)">
+        <img src="assets/delete.svg" />
       </button>
     </div>
   </div>
-  <div class="end" >
-    <button (click)="item.quantity === 1 ? openDialog(item) : changeQuantity(item.products.id, -1)">-</button>
+  <div class="end">
+    <button
+      (click)="
+        item.quantity === 1
+          ? openDialog(item)
+          : changeQuantity(item.products.id, -1)
+      "
+    >
+      -
+    </button>
 
     <p>{{ item.quantity }}</p>
     <button (click)="changeQuantity(item.products.id, 1)">+</button>
-
   </div>
-<!--  <div class="end" *ngIf="item.quantity === 0"-->
-<!--    (click)="openDialog(item)">-->
-<!--  </div>-->
-
+  <!--  <div class="end" *ngIf="item.quantity === 0"-->
+  <!--    (click)="openDialog(item)">-->
+  <!--  </div>-->
 </div>

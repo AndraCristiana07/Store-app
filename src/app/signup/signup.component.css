@@ -6,21 +6,20 @@
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-
 }
 
-.l1{
+.l1 {
   margin-right: 40px;
 }
 
-.l2{
+.l2 {
   margin-right: 50px;
 }
 
-.l3{
+.l3 {
   margin-right: 20px;
 }
-.title{
+.title {
   margin-bottom: 30px;
 }
 
@@ -37,12 +36,12 @@ input {
   padding: 8px;
   margin-bottom: 16px;
 }
-.row{
+.row {
   display: flex;
   justify-content: center;
 }
 
-.eye{
+.eye {
   width: 30px;
   height: 20px;
 }

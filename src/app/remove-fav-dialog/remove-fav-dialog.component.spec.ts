@@ -8,10 +8,9 @@ describe('RemoveFavDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RemoveFavDialogComponent]
-    })
-    .compileComponents();
-    
+      imports: [RemoveFavDialogComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RemoveFavDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

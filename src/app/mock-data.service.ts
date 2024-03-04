@@ -1,28 +1,25 @@
 import { Injectable } from '@angular/core';
-import {Type} from "./models/Type";
-import {Products} from "./models/Products";
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import { Type } from './models/Type';
+import { Products } from './models/Products';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import {
   PRODUCTS_URL,
   PRODUCT_BY_ID_URL,
   USER_LOGIN_URL,
   PRODUCTS_TYPES_URL,
-  PRODUCTS_BY_TAG_URL
+  PRODUCTS_BY_TYPE_URL,
 } from './constants/urls';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MockDataService {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   // getProductsByType(type: string): any {
   //   return this.getProducts().filter(product => product.type === type);
   // }
-
-
 
   //
   // getProducts() {
@@ -73,8 +70,9 @@ export class MockDataService {
   //     count: products.filter(product => product.type === type).length
   //   }));
   // }
-  getProductsByType(type: string): Observable<Type[]> {
-    return this.http.get<Type[]>(PRODUCTS_BY_TAG_URL);
+  getProductsByType(type: string): Observable<Products[]> {
+    const url = `${PRODUCTS_BY_TYPE_URL}${type}`;
+    return this.http.get<Products[]>(url);
   }
   getProducts(): Observable<Products[]> {
     return this.http.get<Products[]>(PRODUCTS_URL);
@@ -85,8 +83,8 @@ export class MockDataService {
   //   return this.http.get<any>(url);
   // }
 
-  getProductTypes(): Observable<Type[]> {
-    return this.http.get<Type[]>(PRODUCTS_TYPES_URL);
+  getProductTypes(): Observable<string[]> {
+    return this.http.get<string[]>(PRODUCTS_TYPES_URL);
   }
 
   // loginUser(credentials: any): Observable<any> {

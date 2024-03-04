@@ -1,27 +1,22 @@
 import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
-import {HeaderComponent} from "../header/header.component";
-import {NgIf} from "@angular/common";
-import {CommonModule} from "@angular/common";
+import { RouterLink } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
+import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    RouterLink,
-    CommonModule,
-    HeaderComponent
-  ],
+  imports: [RouterLink, CommonModule, HeaderComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  password: string | undefined ;
+  password: string | undefined;
   show = false;
 
-  ngOnInit(){
+  ngOnInit() {
     this.password = 'password';
   }
-
 
   onClick() {
     if (this.password === 'password') {

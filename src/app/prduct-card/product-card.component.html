@@ -1,0 +1,41 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let product of products">
+    <mat-card class="card">
+      <mat-card-title>{{ product.title }}</mat-card-title>
+      <mat-card-content>
+        <p>Price: {{ product.price | currency: "EUR" : "symbol" : "1.2-2" }}</p>
+        <div class="row">
+          <!--          <div  *ngIf="!product.addedToCart">-->
+          <div *ngIf="getQuantity(product.id) === 0">
+            <button class="b1" (click)="addToCart(product)">Add to cart</button>
+          </div>
+          <!--          <div *ngIf="product.addedToCart ">-->
+          <div *ngIf="getQuantity(product.id) > 0">
+            <div class="row">
+              <button (click)="changeQuantity(product.id, -1)">-</button>
+              <p>{{ getQuantity(product.id) }}</p>
+              <button (click)="changeQuantity(product.id, 1)">+</button>
+            </div>
+          </div>
+          <button
+            class="b2"
+            (mouseenter)="onButtonHover('heart', product.id)"
+            (mouseleave)="onButtonOut('heart', product.id)"
+            (click)="toggleFavorite(product)"
+          >
+            <!--                  (click)="onButtonClick('heart', product.id)"-->
+            <!--            <img class="img1" [src]="getHeartImage(product.id)"/>-->
+            <img
+              class="img1"
+              [src]="
+                isFavorite(product)
+                  ? 'assets/red-heart-icon.svg'
+                  : 'assets/heart.svg'
+              "
+            />
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

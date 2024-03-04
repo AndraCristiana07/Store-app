@@ -8,10 +8,9 @@ describe('EmptyCartDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EmptyCartDialogComponent]
-    })
-    .compileComponents();
-    
+      imports: [EmptyCartDialogComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(EmptyCartDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

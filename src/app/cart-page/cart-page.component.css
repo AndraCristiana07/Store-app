@@ -1,15 +1,15 @@
-.cart{
+.cart {
   padding: 20px;
 
   text-align: center;
   background: darkgray;
 }
 
-.row{
+.row {
   display: flex;
   justify-content: space-between;
 }
-.summary{
+.summary {
   padding: 20px;
 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -17,19 +17,19 @@
   background: #dddddd;
   margin-top: 50px;
 }
-h2{
+h2 {
   margin-bottom: 20px;
 }
 
-p{
+p {
   margin-bottom: 10px;
 }
 
-.img1{
+.img1 {
   display: flex;
   justify-self: flex-end;
 }
-.b1{
+.b1 {
   display: flex;
   align-items: center;
   width: 100%;
@@ -42,7 +42,7 @@ p{
   color: black;
   padding: 10px;
   border-color: black;
-  border-width: thin ;
+  border-width: thin;
   border-radius: 5px;
   cursor: pointer;
   width: 100px;
@@ -50,6 +50,5 @@ p{
 }
 
 .b2:hover {
-  background-color: #8B89E6;
-
+  background-color: #8b89e6;
 }

@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
-import {HeaderComponent} from "../header/header.component";
-import {CommonModule} from "@angular/common";
+import { HeaderComponent } from '../header/header.component';
+import { CommonModule } from '@angular/common';
+import {Router, RouterLink} from "@angular/router";
+import {FormsModule} from "@angular/forms";
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    CommonModule
-  ],
+  imports: [HeaderComponent, CommonModule, RouterLink, FormsModule],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrl: './signup.component.css',
 })
 export class SignupComponent {
   // password;
-  password: string | undefined ;
+  password: string | undefined;
   show = false;
 
-  ngOnInit(){
+  constructor(private router: Router) {
+  }
+  ngOnInit() {
     this.password = 'password';
   }
-
 
   onClick() {
     if (this.password === 'password') {
@@ -29,5 +29,10 @@ export class SignupComponent {
       this.password = 'password';
       this.show = false;
     }
+  }
+
+  onSubmit(){
+    console.log("sss");
+    this.router.navigate(['/']);
   }
 }

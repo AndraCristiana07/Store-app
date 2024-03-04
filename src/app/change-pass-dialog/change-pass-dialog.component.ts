@@ -1,15 +1,15 @@
-import {Component, Inject} from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialogActions,
   MatDialogContent,
   MatDialogRef,
-  MatDialogTitle
+  MatDialogTitle,
 } from '@angular/material/dialog';
 import { CartService } from '../cart.service';
-import {MatButton} from "@angular/material/button";
-import {CartItem} from "../models/CartItem";
-import {NgIf} from "@angular/common";
+import { MatButton } from '@angular/material/button';
+import { CartItem } from '../models/CartItem';
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-change-pass-dialog',
   standalone: true,
@@ -18,22 +18,21 @@ import {NgIf} from "@angular/common";
     MatDialogActions,
     MatDialogTitle,
     MatButton,
-    NgIf
+    NgIf,
   ],
   templateUrl: './change-pass-dialog.component.html',
-  styleUrl: './change-pass-dialog.component.css'
+  styleUrl: './change-pass-dialog.component.css',
 })
 export class ChangePassDialogComponent {
-  oldpassword: string | undefined ;
-  newpassword: string | undefined ;
+  oldpassword: string | undefined;
+  newpassword: string | undefined;
   show1 = false;
   show2 = false;
 
-  ngOnInit(){
+  ngOnInit() {
     this.oldpassword = 'password';
     this.newpassword = 'password';
   }
-
 
   onClick() {
     if (this.oldpassword === 'password') {
@@ -54,7 +53,7 @@ export class ChangePassDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<ChangePassDialogComponent>,
     // @Inject(MAT_DIALOG_DATA) public data: { item: CartItem },
-    private cartService: CartService
+    private cartService: CartService,
   ) {}
 
   confirmPass(): void {
@@ -65,5 +64,4 @@ export class ChangePassDialogComponent {
   cancelPass(): void {
     this.dialogRef.close(false); // Pass false if canceled
   }
-
 }

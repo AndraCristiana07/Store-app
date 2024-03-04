@@ -6,25 +6,24 @@
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-
 }
-.row{
+.row {
   display: flex;
   justify-content: center;
 }
-.l1{
+.l1 {
   margin-right: 40px;
 }
 
-.l2{
+.l2 {
   margin-right: 50px;
 }
 
-.l3{
+.l3 {
   margin-right: 20px;
 }
-.title{
-margin-bottom: 30px;
+.title {
+  margin-bottom: 30px;
 }
 
 form {
@@ -40,8 +39,6 @@ input {
   padding: 8px;
   margin-bottom: 16px;
 }
-
-
 
 .b2 {
   margin-top: 30px;
@@ -61,14 +58,13 @@ input {
   background-color: #45a049;
 }
 
-
-.b1{
+.b1 {
   border: none;
   background: none;
   color: black;
   cursor: pointer;
 }
 
-.b1:hover{
+.b1:hover {
   color: blue;
 }

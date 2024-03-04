@@ -12,8 +12,7 @@
   <div class="row">
     <button class="b" routerLink="/">shop all</button>
     <div class="container" *ngFor="let type of types">
-      <button class="b" routerLink="/type/{{ type.name }}">{{ type.name }} </button>
+      <button class="b" routerLink="/types/{{ type }}">{{ type }}</button>
     </div>
   </div>
-
 </section>

@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Products} from "./models/Products";
+import { Products } from './models/Products';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FavoriteService {
-  private favoriteProducts: Products[] =[];
+  private favoriteProducts: Products[] = [];
 
-  constructor() { }
-
+  constructor() {}
 
   addToFavorites(product: Products): void {
     if (!this.isFavorite(product)) {
@@ -17,14 +16,14 @@ export class FavoriteService {
   }
 
   removeFromFavorites(product: Products): void {
-    const index = this.favoriteProducts.findIndex(p => p.id === product.id);
+    const index = this.favoriteProducts.findIndex((p) => p.id === product.id);
     if (index !== -1) {
       this.favoriteProducts.splice(index, 1);
     }
   }
 
   isFavorite(product: Products): boolean {
-    return this.favoriteProducts.some(p => p.id === product.id);
+    return this.favoriteProducts.some((p) => p.id === product.id);
   }
 
   getFavoriteProducts(): Products[] {
