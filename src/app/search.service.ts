@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Products } from './models/Products';
 import { MockDataService } from './mock-data.service';
-import { PRODUCT_BY_SEARCH_URL, PRODUCTS_URL } from './constants/urls';
+import {PRODUCT_BY_SEARCH_URL, PRODUCTS_BY_TYPE_URL, PRODUCTS_URL} from './constants/urls';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -23,8 +23,9 @@ export class SearchService {
   //   return this.getAll().filter(product =>
   //     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   //   );
-  getAllProdSearchTerm(searchTerm: string) {
-    return this.http.get<Products[]>(PRODUCT_BY_SEARCH_URL + searchTerm);
+  searchProducts(searchTerm: string) {
+    const url = `${PRODUCT_BY_SEARCH_URL}${searchTerm}`;
+    return this.http.get<Products[]>(url);
   }
 
   // constructor(private http:HttpClient) {}

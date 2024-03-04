@@ -17,9 +17,15 @@ import { TypesComponent } from './types/types.component';
 import { MockDataService } from './mock-data.service';
 import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {SearchService} from "./search.service";
+import {FormsModule} from "@angular/forms";
+import { SearchComponent } from './search/search.component';
+import { HeaderComponent } from './header/header.component';
+import {SearchPageComponent} from "./search-page/search-page.component";
 
 export const routes: Routes = [
-  { path: 'search/searchTerm', component: HomeComponent },
+  { path: 'search/:searchTerm', component: SearchPageComponent },
   { path: '', component: HomeComponent },
   // {path: ''}
   { path: 'types/:type', component: TypesComponent },
@@ -37,15 +43,17 @@ export const routes: Routes = [
     RouterModule.forRoot(routes),
     DailyProductsComponent,
     HttpClientModule,
+    FormsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       newestOnTop: false,
     }),
+    MatSnackBarModule,
     BrowserAnimationsModule,
     BrowserModule,
   ],
   exports: [RouterModule],
-  providers: [provideHttpClient(), MockDataService],
+  providers: [provideHttpClient(), MockDataService, SearchService],
 })
 export class AppRoutingModule {}

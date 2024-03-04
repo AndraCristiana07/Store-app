@@ -48,9 +48,9 @@ export class TypesComponent {
     public dialog: MatDialog,
   ) {
     route.params.subscribe((type) => {
-      console.log(typeof type);
+      // console.log(typeof type);
       _productService.getProductsByType(type['type']).subscribe((selected) => {
-        console.log(selected);
+        // console.log(selected);
 
         this.products = selected;
       });

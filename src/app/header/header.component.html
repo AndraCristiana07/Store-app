@@ -1,6 +1,8 @@
 <header class="brand-name">
   <div class="container">
-    <app-search></app-search>
+    <app-search
+      (search)="search($event)">
+    </app-search>
     <img
       routerLink="/"
       class="img1"
@@ -12,7 +14,13 @@
       <button class="b1" title="Profile" routerLink="/profile">
         <img src="assets/profile.svg" />
       </button>
-      <button class="b1" title="LogIn" routerLink="/login">Log In</button>
+      <ng-container *ngIf="isLoggedIn; else loginButton">
+        <button class="b1" (click)="openLogoutConfirmationDialog()">Log Out</button>
+      </ng-container>
+      <ng-template #loginButton>
+        <button class="b1" title="LogIn" routerLink="/login">Log In</button>
+      </ng-template>
+<!--      <button class="b1" title="LogIn" routerLink="/login">Log In</button>-->
       <button class="b1" title="Favorites" routerLink="/favorites">
         <img src="assets/heart.svg" />
       </button>

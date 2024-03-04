@@ -19,7 +19,7 @@ export class CategoryBarComponent implements OnInit {
   constructor(private mockDataService: MockDataService) {
     mockDataService.getProductTypes().subscribe((serverTypes) => {
       this.types = serverTypes;
-      console.log(this.types);
+      // console.log(this.types);
     });
   }
 
