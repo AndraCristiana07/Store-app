@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { SearchComponent } from '../search/search.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
-import {MatDialog} from "@angular/material/dialog";
-import {LogoutDialogComponent} from "../logout-dialog/logout-dialog.component";
-import {Router} from "@angular/router";
+import { MatDialog } from '@angular/material/dialog';
+import { LogoutDialogComponent } from '../logout-dialog/logout-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,9 +15,12 @@ import {Router} from "@angular/router";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   isLoggedIn: boolean;
-  constructor(public dialog: MatDialog, private router:Router) {
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+  ) {
     this.isLoggedIn = localStorage.getItem('token') !== null;
   }
   search(searchTerm: string): void {
@@ -28,21 +31,20 @@ export class HeaderComponent implements OnInit{
   openLogoutConfirmationDialog(): void {
     const dialogRef = this.dialog.open(LogoutDialogComponent, {
       width: '250px',
-      data: {}
+      data: {},
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.logout();
       }
     });
   }
-  logout(){
+  logout() {
     localStorage.removeItem('token');
     this.isLoggedIn = false;
   }
-ngOnInit() {
-}
+  ngOnInit() {}
 
   handleLogin() {
     this.isLoggedIn = true;

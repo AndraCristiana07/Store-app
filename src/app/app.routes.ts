@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { DeliveryPageComponent } from './delivery-page/delivery-page.component';
 import { DailyProductsComponent } from './daily-products/daily-products.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,12 +16,12 @@ import { TypesComponent } from './types/types.component';
 import { MockDataService } from './mock-data.service';
 import { AppComponent } from './app.component';
 import { provideHttpClient } from '@angular/common/http';
-import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
-import {SearchService} from "./search.service";
-import {FormsModule} from "@angular/forms";
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { SearchService } from './search.service';
+import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { HeaderComponent } from './header/header.component';
-import {SearchPageComponent} from "./search-page/search-page.component";
+import { SearchPageComponent } from './search-page/search-page.component';
 
 export const routes: Routes = [
   { path: 'search/:searchTerm', component: SearchPageComponent },
@@ -44,11 +43,6 @@ export const routes: Routes = [
     DailyProductsComponent,
     HttpClientModule,
     FormsModule,
-    ToastrModule.forRoot({
-      timeOut: 3000,
-      positionClass: 'toast-bottom-right',
-      newestOnTop: false,
-    }),
     MatSnackBarModule,
     BrowserAnimationsModule,
     BrowserModule,

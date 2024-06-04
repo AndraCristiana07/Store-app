@@ -1,12 +1,11 @@
 <header class="brand-name">
   <div class="container">
-    <app-search
-      (search)="search($event)">
-    </app-search>
+    <app-search (search)="search($event)"> </app-search>
     <img
       routerLink="/"
       class="img1"
-      src="/favicon.ico"
+      src="assets/store.svg"
+      width="40px"
       alt="logo"
       aria-hidden="true"
     />
@@ -15,12 +14,14 @@
         <img src="assets/profile.svg" />
       </button>
       <ng-container *ngIf="isLoggedIn; else loginButton">
-        <button class="b1" (click)="openLogoutConfirmationDialog()">Log Out</button>
+        <button class="b1" (click)="openLogoutConfirmationDialog()">
+          Log Out
+        </button>
       </ng-container>
       <ng-template #loginButton>
         <button class="b1" title="LogIn" routerLink="/login">Log In</button>
       </ng-template>
-<!--      <button class="b1" title="LogIn" routerLink="/login">Log In</button>-->
+      <!--      <button class="b1" title="LogIn" routerLink="/login">Log In</button>-->
       <button class="b1" title="Favorites" routerLink="/favorites">
         <img src="assets/heart.svg" />
       </button>

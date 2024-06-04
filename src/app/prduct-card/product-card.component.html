@@ -3,7 +3,7 @@
     <mat-card class="card">
       <mat-card-title>{{ product.title }}</mat-card-title>
       <mat-card-content>
-        <p>Price: {{ product.price | currency: "EUR" : "symbol" : "1.2-2" }}</p>
+        <p class="price">Price: {{ product.price | currency: "EUR" : "symbol" : "1.2-2" }}</p>
         <div class="row">
           <!--          <div  *ngIf="!product.addedToCart">-->
           <div *ngIf="getQuantity(product.id) === 0">
@@ -25,6 +25,7 @@
           >
             <img
               class="img1"
+              width="30px"
               [src]="
                 isFavorite(product)
                   ? 'assets/red-heart-icon.svg'

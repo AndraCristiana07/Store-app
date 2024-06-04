@@ -7,6 +7,8 @@ import { CartDialogComponent } from '../cart-dialog/cart-dialog.component';
 import { CartService } from '../cart.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ChangePassDialogComponent } from '../change-pass-dialog/change-pass-dialog.component';
+import {User} from "../models/User";
+import {UserService} from "../user.service";
 
 @Component({
   selector: 'app-profile-page',
@@ -24,20 +26,16 @@ import { ChangePassDialogComponent } from '../change-pass-dialog/change-pass-dia
 })
 export class ProfilePageComponent {
   constructor(
-    private cartService: CartService,
     public dialog: MatDialog,
+    private userService: UserService
   ) {}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ChangePassDialogComponent, {
-      // data: { item: item }
-      // data: {name: this.name, animal: this.animal},
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
-      // this.animal = result;
-      // this.removeItem(item.products.id);
     });
   }
 }

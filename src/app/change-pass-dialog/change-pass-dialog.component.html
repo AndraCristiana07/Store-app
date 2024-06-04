@@ -1,31 +1,27 @@
 <h2 mat-dialog-title>Change Password?</h2>
-<mat-dialog-content>
-  <p>Input your old password and the new one bellow</p>
-  <div class="row">
-    <label class="l1" for="oldpassword">Old Password:</label>
-    <input [type]="oldpassword" id="oldpassword" name="password" required />
-    <img (click)="onClick()" src="assets/eye.svg" />
-    <i class="" aria-hidden="true" *ngIf="!show1"></i>
-    <i class="" aria-hidden="true" *ngIf="show1"></i>
-  </div>
-  <div class="row">
-    <label class="l1" for="newpassword">New Password:</label>
-    <input [type]="newpassword" id="newpassword" name="password" required />
-    <img (click)="onClick()" src="assets/eye.svg" />
-    <i class="" aria-hidden="true" *ngIf="!show2"></i>
-    <i class="" aria-hidden="true" *ngIf="show2"></i>
-  </div>
-  <div class="row">
-    <label class="l1" for="renewpassword">Renter New Password:</label>
-    <input [type]="newpassword" id="renewpassword" name="password" required />
-    <img (click)="onClick()" src="assets/eye.svg" />
-    <i class="" aria-hidden="true" *ngIf="!show2"></i>
-    <i class="" aria-hidden="true" *ngIf="show2"></i>
-  </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="cancelPass()">Cancel</button>
-  <button mat-button color="warn" (click)="confirmPass()">
-    Change Password
-  </button>
-</mat-dialog-actions>
+<form (ngSubmit)="changePassword()">
+
+  <mat-dialog-content>
+    <p>Input your old password and the new one below</p>
+    <div class="row">
+      <label for="currentPassword">Current Password:</label>
+      <input [type]="show ? 'text' : 'password'" id="currentPassword" name="currentPassword" [(ngModel)]="currentPassword" required>
+      <button mat-icon-button (click)="onClick1()" type="button">
+        <img src="assets/eye.svg" alt="Toggle Current Password Visibility">
+      </button>
+    </div>
+    <div class="row">
+      <label for="newPassword">New Password:</label>
+      <input [type]="show ? 'text' : 'password'" id="newPassword" name="newPassword" [(ngModel)]="newPassword" required>
+      <button mat-icon-button (click)="onClick2()" type="button">
+        <img src="assets/eye.svg" alt="Toggle New Password Visibility">
+      </button>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button type="button" (click)="cancelPass()">Cancel</button>
+    <button mat-button type="submit" color="warn">Change Password</button>
+  </mat-dialog-actions>
+
+</form>

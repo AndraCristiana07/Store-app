@@ -8,7 +8,7 @@
       <mat-card class="card">
         <mat-card-title>{{ product.title }}</mat-card-title>
         <mat-card-content>
-          <p>
+          <p class="price">
             Price: {{ product.price | currency: "EUR" : "symbol" : "1.2-2" }}
           </p>
           <div class="row">
@@ -26,7 +26,7 @@
               </div>
             </div>
             <button class="b2" (click)="openDialog(product)">
-              <img class="img1" src="assets/red-heart-icon.svg" />
+              <img class="img1" src="assets/red-heart-icon.svg" width="30px"/>
             </button>
           </div>
         </mat-card-content>

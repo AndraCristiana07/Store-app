@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Products } from './models/Products';
 import { MockDataService } from './mock-data.service';
-import {PRODUCT_BY_SEARCH_URL, PRODUCTS_BY_TYPE_URL, PRODUCTS_URL} from './constants/urls';
+import {
+  PRODUCT_BY_SEARCH_URL,
+  PRODUCTS_BY_TYPE_URL,
+  PRODUCTS_URL,
+} from './constants/urls';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({

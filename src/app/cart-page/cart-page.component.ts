@@ -10,6 +10,14 @@ import { CommonModule } from '@angular/common';
 import { EmptyCartDialogComponent } from '../empty-cart-dialog/empty-cart-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CartDialogComponent } from '../cart-dialog/cart-dialog.component';
+import * as pdfMake from 'pdfmake/build/pdfmake'
+import * as pdfFonts from 'pdfmake/build/vfs_fonts'
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+import {DeliveryService} from "../delivery.service";
+
+// (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-cart-page',
   imports: [
@@ -25,13 +33,15 @@ import { CartDialogComponent } from '../cart-dialog/cart-dialog.component';
 })
 export class CartPageComponent implements OnInit {
   // cartItems: any[] = [];
+  deliveryInfo: any;
   cart!: Cart;
-
   constructor(
     private cartService: CartService,
     public dialog: MatDialog,
+    private deliveryService:DeliveryService
   ) {
     this.setCart();
+    this.deliveryInfo = this.deliveryService.getDeliveryInfo();
   }
 
   setCart() {
@@ -84,4 +94,20 @@ export class CartPageComponent implements OnInit {
   removeItem(productId: number): void {
     return this.cartService.removeItem(productId);
   }
+
+ genPDF() {
+   const printableContent = document.querySelector('.printable');
+
+   html2canvas(<HTMLElement>printableContent).then(canvas => {
+     const contentDataURL = canvas.toDataURL('image/png');
+     const pdf = new jsPDF('p', 'mm', 'a4');
+     const imgWidth = 210;
+     const pageHeight = 295;
+     const imgHeight = canvas.height * imgWidth / canvas.width;
+     let position = 0;
+
+     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
+     pdf.save('cart_summary.pdf');
+   });
+ }
 }

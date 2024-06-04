@@ -43,12 +43,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A store application where you can buy stuff you need. 
+A store application where you can buy the groceries you need. 
 
-You have a home page with all the products cards. You can add to cart (or change the quantity of how many you want in the cart) or add the product to favorites.
-There's a favorites page, where you can see all the products you liked or you can erase some if you don't like them anymore.
-There's a Login and SignUp Page, a Profile page and a cart page.
-In the cart page you can see all the products you want to buy and the summary of your total (total, price for delivery, fees). The price for delivery depends on how much you are spending. Uou can also modify the quantity of your products here, delete specific items or delete your entire cart.
+
+* Home page: a page with all the products cards. You can add to cart (or change the quantity of how many you want in the cart) or add the product to favorites. It also has a header where there is a search bar to get the wanted grocery. There are also buttons to go to the favorite page, profile page, log out or the cart page
+
+* Favorites page: a page where you can see all the products you liked or you can erase some if you don't like them anymore. If there are no products added, a message will be displayed "No product added to favorite list :("
+
+* Cart page: a page where you can see all the products you added to your cart and the summary of your total (number of products, total price, price for delivery, fees). The price for delivery depends on how much you are spending. You can also modify the number of products from this page or delete them completely from the cart. You can also empty the whole cart or print it to have your shopping list. You can also find a delivery part here where you can click and fill in your address that will be shown in the cart page (just the first line, not the full address)
+
+* Login and SignUp Page: the users are stored in a sqlite database. All the modifications are done with the help of the typescript backend such as creating the database, populating it. 
+
+The products are also stored in a table with sqlite and all the API calls are done in the server.ts file from the ![backend](https://github.com/AndraCristiana07/Store-app-backend)
+
 
 ### Built With
 

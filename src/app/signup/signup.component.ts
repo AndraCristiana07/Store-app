@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
-import {Router, RouterLink} from "@angular/router";
-import {FormsModule} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import { Router, RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-signup',
   standalone: true,
@@ -20,11 +20,19 @@ export class SignupComponent {
   errorMsg: string = '';
   show = false;
 
-  constructor(private router: Router, private http: HttpClient,  private snackBar:MatSnackBar) {
-  }
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private snackBar: MatSnackBar,
+  ) {}
   onSubmit() {
-    const userData = { name: this.name, email: this.email, password: this.password };
-    this.http.post<any>('http://localhost:5000/api/users/signup', userData)
+    const userData = {
+      name: this.name,
+      email: this.email,
+      password: this.password,
+    };
+    this.http
+      .post<any>('http://localhost:5000/api/users/signup', userData)
       .subscribe(
         (response) => {
           localStorage.setItem('token', response.token);
@@ -32,8 +40,8 @@ export class SignupComponent {
           this.router.navigate(['/login']);
         },
         (error) => {
-          this.showErrorSnackbar("Sign Up Failed: " + error.error);
-        }
+          this.showErrorSnackbar('Sign Up Failed: ' + error.error);
+        },
       );
   }
 
@@ -43,21 +51,20 @@ export class SignupComponent {
   private showSuccessSnackbar(message: string) {
     this.snackBar.open(message, 'Close', {
       duration: 3000,
-      panelClass: ['snackbar-success']
+      panelClass: ['snackbar-success'],
     });
   }
 
   private showErrorSnackbar(message: string) {
     this.snackBar.open(message, 'Close', {
       duration: 5000,
-      panelClass: ['snackbar-error']
+      panelClass: ['snackbar-error'],
     });
   }
   // onSubmit(){
   //   console.log("sss");
   //   this.router.navigate(['/']);
   // }
-
 
   ngOnInit() {
     this.password = 'password';
@@ -72,5 +79,4 @@ export class SignupComponent {
   //     this.show = false;
   //   }
   // }
-
 }

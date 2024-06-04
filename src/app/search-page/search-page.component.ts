@@ -1,39 +1,53 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {CommonModule} from "@angular/common";
-import {Router} from "@angular/router";
-import {SearchService} from "../search.service";
-import {HeaderComponent} from "../header/header.component";
-import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
-import {MatGridList, MatGridTile} from "@angular/material/grid-list";
-import {CartService} from "../cart.service";
-import {Products} from "../models/Products";
-import {FavoriteService} from "../favorite.service";
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { SearchService } from '../search.service';
+import { HeaderComponent } from '../header/header.component';
+import { MatCard, MatCardContent, MatCardTitle } from '@angular/material/card';
+import { MatGridList, MatGridTile } from '@angular/material/grid-list';
+import { CartService } from '../cart.service';
+import { Products } from '../models/Products';
+import { FavoriteService } from '../favorite.service';
 
 @Component({
   selector: 'app-search-page',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, MatCard, MatCardContent, MatCardTitle, MatGridList, MatGridTile],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    MatCard,
+    MatCardContent,
+    MatCardTitle,
+    MatGridList,
+    MatGridTile,
+  ],
   templateUrl: './search-page.component.html',
-  styleUrl: './search-page.component.css'
+  styleUrl: './search-page.component.css',
 })
 export class SearchPageComponent {
   searchResults: any[''];
   buttonHoverState: { [key: string]: boolean } = {};
   buttonClickedState: { [key: string]: boolean } = {};
-  constructor(private route: ActivatedRoute, private favoriteService: FavoriteService,private searchService: SearchService, private cartService: CartService) {
-      route.paramMap.subscribe(params => {
-        const term = params.get('term');
-        if(term)
+  constructor(
+    private route: ActivatedRoute,
+    private favoriteService: FavoriteService,
+    private searchService: SearchService,
+    private cartService: CartService,
+  ) {
+    route.paramMap.subscribe((params) => {
+      const term = params.get('searchTerm');
+      console.log(params);
+      if (term)
         this.searchService.searchProducts(term).subscribe(
           (results) => {
             this.searchResults = results;
           },
           (error) => {
             console.error('Error searching products:', error);
-          }
+          },
         );
-      });
+    });
   }
 
   // ngOnInit(): void {
@@ -58,7 +72,7 @@ export class SearchPageComponent {
       },
       (error) => {
         console.error('Error searching products:', error);
-      }
+      },
     );
   }
 

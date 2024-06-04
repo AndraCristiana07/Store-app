@@ -8,8 +8,8 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
 }
 :root {
-  --primary-color: #605dc8;
-  --secondary-color: #8b89e6;
+  --primary-color: #0038a4;
+  --secondary-color: #e57200;
   --accent-color: #e8e7fa;
   --shadow-color: #e8e8e8;
 }
@@ -25,6 +25,7 @@ button.primary {
 html,
 body {
   height: 100%;
+  background: #edf3f8;
 }
 body {
   margin: 0;

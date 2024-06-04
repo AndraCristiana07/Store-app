@@ -1,0 +1,57 @@
+.card {
+  max-width: 500px;
+  max-height: 300px;
+  min-width: 250px;
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  color: #7346c7;
+  justify-content: center;
+  align-items: center;
+}
+
+.b1 {
+  border: none;
+  height: 50px;
+  background-color: white;
+  color: #250c0c;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+  width: 100px;
+  border-radius: 15px;
+}
+
+.b1:hover {
+  border: 1px solid #888;
+  background-color: #ddd;
+}
+
+.b2 {
+  border: none;
+  height: 50px;
+  background-color: white;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+  width: 50px;
+  border-radius: 15px;
+}
+
+.img1:hover {
+}
+
+.del {
+  border: none;
+  cursor: pointer;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
