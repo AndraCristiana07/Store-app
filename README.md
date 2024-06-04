@@ -46,13 +46,41 @@
 A store application where you can buy the groceries you need. 
 
 
-* Home page: a page with all the products cards. You can add to cart (or change the quantity of how many you want in the cart) or add the product to favorites. It also has a header where there is a search bar to get the wanted grocery. There are also buttons to go to the favorite page, profile page, log out or the cart page
+* Home page: a page with all the products cards. You can add to cart (or change the quantity of how many you want in the cart) or add the product to favorites.  There are buttons in the header to go to the favorite page, profile page, log out or the cart page
+![Home image](https://github.com/AndraCristiana07/Store-app/blob/main/images/home.png?raw=true)
+
+It also has a search bar to get the wanted grocery.
+![Search image](https://github.com/AndraCristiana07/Store-app/blob/main/images/search.png?raw=true)
+
+Under the header there is a category bar where you can find and click on any of the groceries types to get a more filtered search
+![Category image](https://github.com/AndraCristiana07/Store-app/blob/main/images/fruit.png?raw=true)
 
 * Favorites page: a page where you can see all the products you liked or you can erase some if you don't like them anymore. If there are no products added, a message will be displayed "No product added to favorite list :("
 
-* Cart page: a page where you can see all the products you added to your cart and the summary of your total (number of products, total price, price for delivery, fees). The price for delivery depends on how much you are spending. You can also modify the number of products from this page or delete them completely from the cart. You can also empty the whole cart or print it to have your shopping list. You can also find a delivery part here where you can click and fill in your address that will be shown in the cart page (just the first line, not the full address)
+![Fav image](https://github.com/AndraCristiana07/Store-app/blob/main/images/fav.png?raw=true)
 
-* Login and SignUp Page: the users are stored in a sqlite database. All the modifications are done with the help of the typescript backend such as creating the database, populating it. 
+* Cart page: a page where you can see all the products you added to your cart and the summary of your total (number of products, total price, price for delivery, fees). The price for delivery depends on how much you are spending.
+
+![Cart image](https://github.com/AndraCristiana07/Store-app/blob/main/images/cart.png?raw=true)
+
+You can also modify the number of products from this page or delete them completely from the cart. You can also empty the whole cart or print it to have your shopping list.
+
+![Cart dialog image](https://github.com/AndraCristiana07/Store-app/blob/main/images/cart_dialog.png?raw=true)
+
+
+You can also find a delivery part here where you can click and fill in your address that will be shown in the cart page (just the first line, not the full address)
+
+![Delivery page image](https://github.com/AndraCristiana07/Store-app/blob/main/images/delivery.png?raw=true)
+
+![Delivery image](https://github.com/AndraCristiana07/Store-app/blob/main/images/delivery_shown.png?raw=true)
+
+* Login and SignUp Page: the users are stored in a sqlite database. All the modifications are done with the help of the typescript backend such as creating the database and populating it. 
+
+![Login image](https://github.com/AndraCristiana07/Store-app/blob/main/images/login.png?raw=true)
+![Signup image](https://github.com/AndraCristiana07/Store-app/blob/main/images/signup.png?raw=true)
+
+There are toast shown if the login was successful or not.
+![Signup image](https://github.com/AndraCristiana07/Store-app/blob/main/images/login_toast.png?raw=true)
 
 The products are also stored in a table with sqlite and all the API calls are done in the server.ts file from the ![backend](https://github.com/AndraCristiana07/Store-app-backend)
 
@@ -117,9 +145,10 @@ If you want to make your own app like this you need to:
 - [x] Make pages for all "types" of products
 - [x] Make "add to cart" transform into change quantity after it's added to cart and go back when the item reaches 0 quantity again
 - [x] Make search bar
-- [ ] Implement search
-- [ ] Implement Login/ SignUp
-- [ ] store data in a database 
+- [x] Implement search
+- [x] Implement Login/ SignUp
+- [x] store data in a database 
+- [ ] pagination and more products
 
 
 
