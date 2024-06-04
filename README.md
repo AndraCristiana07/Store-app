@@ -82,7 +82,7 @@ You can also find a delivery part here where you can click and fill in your addr
 There are toast shown if the login was successful or not.
 ![Signup image](https://github.com/AndraCristiana07/Store-app/blob/main/images/login_toast.png?raw=true)
 
-The products are also stored in a table with sqlite and all the API calls are done in the server.ts file from the ![backend](https://github.com/AndraCristiana07/Store-app-backend)
+The products are also stored in a table with sqlite and all the API calls are done in the server.ts file from the [backend](https://github.com/AndraCristiana07/Store-app-backend)
 
 
 ### Built With
